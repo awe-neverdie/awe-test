@@ -30,14 +30,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
 
-                // Fade in after text change
+                // Trigger fade-in after text change
                 setTimeout(() => {
                     buttons.forEach(button => {
                         button.classList.remove('fade-out');
                         button.classList.add('fade-in');
                     });
-                }, 10); // Slight delay to ensure fade-out completes
-            }, 500); // Match this with the CSS transition duration for fade-out
+                }, 50); // Short delay to ensure fade-out completes
+            }, 300); // Match this with the CSS transition duration for fade-out
 
             isDonateMenuVisible = true;
         } else {
@@ -52,14 +52,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     button.querySelector('h2').innerHTML = getOriginalText(button);
                 });
 
-                // Fade in after text change
+                // Trigger fade-in after text change
                 setTimeout(() => {
                     buttons.forEach(button => {
                         button.classList.remove('fade-out');
                         button.classList.add('fade-in');
                     });
-                }, 10); // Slight delay to ensure fade-out completes
-            }, 500); // Match this with the CSS transition duration for fade-out
+                }, 50); // Short delay to ensure fade-out completes
+            }, 300); // Match this with the CSS transition duration for fade-out
 
             isDonateMenuVisible = false;
         }
