@@ -140,16 +140,18 @@ footer a {
     }
 }
 
+/* Add these to your existing CSS file */
+
 .hidden {
     display: none;
 }
 
 .fade-out {
     opacity: 0;
-    transition: opacity 0.5s ease-out;
+    transition: opacity 0.3s ease-out; /* Ensure this matches the JS timeout */
 }
 
 .fade-in {
     opacity: 1;
-    transition: opacity 0.5s ease-in;
+    transition: opacity 0.3s ease-in; /* Ensure this matches the JS timeout */
 }
