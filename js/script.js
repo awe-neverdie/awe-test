@@ -26,6 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
         buttons.forEach(button => button.classList.remove('hidden'));
         setTimeout(() => {
             buttons.forEach(button => button.classList.remove('fade-out'));
+            buttons.forEach(button => button.classList.add('fade-in'));
         }, 500);
+        setTimeout(() => {
+            buttons.forEach(button => button.classList.remove('fade-in'));
+        }, 1000);
     });
 });
