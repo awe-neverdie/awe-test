@@ -88,6 +88,7 @@ main {
 
 .link-button:hover, .link-button:focus-within {
     transform: scale(1.01);
+    cursor: pointer;
 }
 
 .link-button:not(:hover) {
