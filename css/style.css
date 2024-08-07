@@ -1,0 +1,140 @@
+:root {
+    --accent: 66, 185, 131;
+    --accent-light: 179, 179, 179;
+    --accent-dark: 0, 255, 127;
+    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+}
+
+html, body {
+    font-family: Roboto Mono, monospace;
+    background-color: #13151A;
+    margin: 0;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #13151A;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease;
+    pointer-events: none;
+}
+
+.loader-text {
+    font-family: Roboto Mono, monospace;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+
+main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: calc(90% - 1rem);
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    position: relative;
+    z-index: 1;
+    transition: opacity 1s ease;
+}
+
+.container {
+    margin-left: -2rem;
+}
+
+.link-button {
+    list-style: none;
+    display: flex;
+    padding: 1px;
+    background-color: #23262d;
+    border-radius: 7px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.link-button a {
+    width: 100%;
+    text-decoration: none;
+    line-height: 1.4;
+    padding: calc(1.5rem - 1px);
+    border-radius: 8px;
+    color: #ffffff;
+    background-color: #23262d;
+    opacity: .8;
+    position: relative;
+}
+
+.link-button h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    transition: color .6s cubic-bezier(.22, 1, .36, 1);
+}
+
+.link-button:hover, .link-button:focus-within {
+    transform: scale(1.01);
+}
+
+.link-button:not(:hover) {
+    transform: scale(1);
+}
+
+.link-button:hover h2 {
+    color: rgb(var(--accent-light));
+}
+.link-button.disabled {
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.center {
+    text-align: center;
+}
+
+.profile-image-container {
+    background: transparent;
+    border-radius: 100%;
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    color: #ffffff;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
