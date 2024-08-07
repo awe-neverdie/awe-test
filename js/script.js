@@ -9,6 +9,11 @@ window.onload = function () {
 document.addEventListener('DOMContentLoaded', function() {
     const donateButton = document.getElementById('donate-button');
     const buttons = Array.from(document.querySelectorAll('.link-button'));
+    const walletAddresses = {
+        'Telegram': 'telegram@example.com',
+        'Steam': 'steam@example.com',
+        'Discord': 'discord@example.com'
+    };
     let isDonateMenuVisible = false;
 
     donateButton.addEventListener('click', function() {
@@ -25,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 buttons.forEach(button => {
                     if (button !== donateButton) {
                         button.querySelector('h2').textContent = getPaymentMethod(button);
+                        button.querySelector('.wallet-address').textContent = walletAddresses[getPaymentMethod(button)] || '';
                     } else {
                         button.querySelector('h2').innerHTML = 'Back &larr;';
                     }
@@ -35,6 +41,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     buttons.forEach(button => {
                         button.classList.remove('fade-out');
                         button.classList.add('fade-in');
+                        if (button !== donateButton) {
+                            button.querySelector('.wallet-address').classList.add('visible');
+                        }
                     });
                 }, 50); // Short delay to ensure fade-out completes
             }, 300); // Match this with the CSS transition duration for fade-out
@@ -44,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Switch back to original buttons
             buttons.forEach(button => {
                 button.classList.add('fade-out');
+                button.querySelector('.wallet-address').classList.remove('visible');
             });
 
             // Change text back after fading out
@@ -67,9 +77,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getPaymentMethod(button) {
         switch (button) {
-            case buttons[0]: return 'Pal';
-            case buttons[1]: return 'Credit Card';
-            case buttons[2]: return 'Bitcoin';
+            case buttons[0]: return 'Telegram';
+            case buttons[1]: return 'Steam';
+            case buttons[2]: return 'Discord';
             default: return 'Unknown';
         }
     }
