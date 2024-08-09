@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const donateButton = document.querySelector('.donate-button');
-    const backButton = document.querySelector('.back-button a');
+    const backButton = document.querySelector('.back-button');
     const buttonList = document.querySelector('.button-list');
     const donateDetails = document.querySelector('.donate-details');
 
