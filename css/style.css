@@ -35,6 +35,10 @@ body::-webkit-scrollbar {
     pointer-events: none;
 }
 
+.loader-container.hidden {
+    display: none;
+}
+
 .loader-text {
     font-family: Roboto Mono, monospace;
     font-size: 2rem;
