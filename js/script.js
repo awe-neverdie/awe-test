@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const donateButton = document.getElementById('donate-button');
     const buttons = Array.from(document.querySelectorAll('.link-button'));
     const walletAddresses = {
-        'Telegram': 'telegram@example.com',
-        'Steam': 'steam@example.com',
-        'Discord': 'discord@example.com'
+        'TON': 'xxx',
+        'Steaqqm': 'steamwew@example.com',
+        'Discqqweord': 'disceword@example.com'
     };
     let isDonateMenuVisible = false;
 
