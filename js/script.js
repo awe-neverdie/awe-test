@@ -1,39 +1,35 @@
 window.onload = function () {
     setTimeout(function () {
-        const loader = document.querySelector('.loader-container');
-        loader.style.opacity = '0';
-        setTimeout(function () {
-            loader.style.display = 'none'; // Hide the loader completely after fade out
-            document.querySelector('main').style.opacity = '1';
-            document.body.style.overflowY = 'scroll';
-        }, 1000); // Match the duration of the fade-out transition
-    }, 1000); // Initial delay before starting the fade-out
+        document.querySelector('.loader-container').style.opacity = '0';
+        document.querySelector('main').style.opacity = '1';
+        document.body.style.overflowY = 'scroll';
+    }, 1000);
 };
 
-document.addEventListener('DOMContentLoaded', function () {
-    const donateButton = document.querySelector('.donate-button');
-    const backButton = document.querySelector('.back-button');
-    const buttonList = document.querySelector('.button-list');
-    const donateDetails = document.querySelector('.donate-details');
+document.addEventListener('DOMContentLoaded', function() {
+    const donateButton = document.getElementById('donate-button');
+    const backButton = document.getElementById('back-button');
+    const buttons = document.querySelectorAll('.link-button');
+    const donateMenu = document.getElementById('donate-menu');
 
-    donateButton.addEventListener('click', function (event) {
-        event.preventDefault();
-        buttonList.style.opacity = '0';
-        setTimeout(function () {
-            buttonList.classList.add('hidden');
-            donateDetails.classList.remove('hidden');
-            donateDetails.classList.add('visible');
+    donateButton.addEventListener('click', function() {
+        buttons.forEach(button => button.classList.add('fade-out'));
+        setTimeout(() => {
+            buttons.forEach(button => button.classList.add('hidden'));
+            donateMenu.classList.add('active', 'fade-in');
         }, 500);
     });
 
-    backButton.addEventListener('click', function (event) {
-        event.preventDefault();
-        donateDetails.style.opacity = '0';
-        setTimeout(function () {
-            donateDetails.classList.remove('visible');
-            donateDetails.classList.add('hidden');
-            buttonList.classList.remove('hidden');
-            buttonList.style.opacity = '1';
+    backButton.addEventListener('click', function() {
+        donateMenu.classList.remove('fade-in');
+        donateMenu.classList.remove('active');
+        buttons.forEach(button => button.classList.remove('hidden'));
+        setTimeout(() => {
+            buttons.forEach(button => button.classList.remove('fade-out'));
+            buttons.forEach(button => button.classList.add('fade-in'));
         }, 500);
+        setTimeout(() => {
+            buttons.forEach(button => button.classList.remove('fade-in'));
+        }, 1000);
     });
 });
