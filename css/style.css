@@ -19,7 +19,6 @@ body::-webkit-scrollbar {
     background: transparent;
 }
 
-
 .loader-container {
     display: flex;
     justify-content: center;
@@ -98,6 +97,7 @@ main {
 .link-button:hover h2 {
     color: rgb(var(--accent-light));
 }
+
 .link-button.disabled {
     cursor: not-allowed;
     transform: none !important;
@@ -115,39 +115,6 @@ main {
     margin: 0 auto;
 }
 
-#####
-.hiden {
-    display: none;
-}
-
-.fade-out {
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
-}
-
-.fade-in {
-    opacity: 1;
-    transition: opacity 0.5s ease-out;
-}
-
-.menu-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.donate-menu {
-    display: none;
-}
-
-.donate-menu.active {
-    display: block;
-}
-
-.link-button {
-    margin: 10px 0;
-}
-
-####
 footer {
     text-align: center;
     margin-top: 2rem;
@@ -170,4 +137,46 @@ footer a {
     to {
         opacity: 1;
     }
+}
+
+.hidden {
+    display: none;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+
+.menu-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.donate-menu {
+    display: none;
+}
+
+.donate-menu.active {
+    display: block;
+}
+
+.astro-5NTVGBE6 {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.astro-5NTVGBE6:hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
 }
