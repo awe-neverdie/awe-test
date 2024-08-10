@@ -13,29 +13,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const donateMenu = document.getElementById('donate-menu');
 
     donateButton.addEventListener('click', function() {
-        if (!donateMenu.classList.contains('active')) {
+        buttons.forEach(button => {
+            button.classList.add('fade-out');
+        });
+        setTimeout(() => {
             buttons.forEach(button => {
-                button.classList.add('fade-out');
-                button.classList.remove('fade-in');
+                button.classList.add('hidden');
+                button.classList.remove('fade-out');
             });
-            setTimeout(() => {
-                buttons.forEach(button => button.classList.add('hidden'));
-                donateMenu.classList.add('active', 'fade-in-menu');
-            }, 500);
-        }
+            donateMenu.classList.add('active', 'fade-in-menu');
+        }, 500);
     });
 
     backButton.addEventListener('click', function() {
-        if (donateMenu.classList.contains('active')) {
-            donateMenu.classList.remove('fade-in-menu');
-            donateMenu.classList.add('fade-out-menu');
-            setTimeout(() => {
-                donateMenu.classList.remove('active', 'fade-out-menu');
-                buttons.forEach(button => {
-                    button.classList.remove('hidden');
-                    button.classList.add('fade-in');
-                });
-            }, 500);
-        }
+        donateMenu.classList.add('fade-out-menu');
+        donateMenu.classList.remove('fade-in-menu');
+        
+        setTimeout(() => {
+            donateMenu.classList.remove('active', 'fade-out-menu');
+            buttons.forEach(button => {
+                button.classList.remove('hidden');
+                button.classList.add('fade-in');
+            });
+        }, 500);
     });
 });
