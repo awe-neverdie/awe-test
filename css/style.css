@@ -118,11 +118,13 @@ main {
 
 footer {
     text-align: center;
-    margin-top: 2rem;
     padding: 1rem;
     color: #ffffff;
     opacity: 0.8;
     font-size: 0.9rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
 footer a {
@@ -141,17 +143,21 @@ footer a {
 }
 
 .hidden {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0.5s;
 }
 
 .fade-out {
     opacity: 0;
-    transition: opacity 0.5s ease-out;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0.5s;
 }
 
 .fade-in {
     opacity: 1;
-    transition: opacity 0.5s ease-in;
+    visibility: visible;
+    transition: opacity 0.5s ease-in, visibility 0.5s;
 }
 
 .menu-container {
@@ -160,23 +166,14 @@ footer a {
 }
 
 .donate-menu {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    display: none;
 }
 
 .donate-menu.active {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-}
-
-.fade-out-menu {
+    display: block;
     opacity: 0;
-    transform: translateY(20px);
-    pointer-events: none;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    visibility: visible;
+    transition: opacity 0.5s ease-in, visibility 0.5s;
 }
 
 .astro-5NTVGBE6 {
@@ -192,4 +189,16 @@ footer a {
 .astro-5NTVGBE6:hover {
     cursor: pointer;
     background-color: #f0f0f0;
+}
+
+.fade-out-menu {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0.5s;
+}
+
+.fade-in-menu {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in, visibility 0.5s;
 }
