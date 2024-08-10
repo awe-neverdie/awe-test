@@ -16,18 +16,20 @@ document.addEventListener('DOMContentLoaded', function() {
         buttons.forEach(button => button.classList.add('fade-out'));
         setTimeout(() => {
             buttons.forEach(button => button.classList.add('hidden'));
-            donateMenu.classList.add('active', 'fade-in');
+            donateMenu.classList.add('active', 'fade-in-menu');
         }, 500);
     });
 
     backButton.addEventListener('click', function() {
-        donateMenu.classList.remove('fade-in');
-        donateMenu.classList.remove('active');
-        buttons.forEach(button => button.classList.remove('hidden'));
+        donateMenu.classList.remove('fade-in-menu');
+        donateMenu.classList.add('fade-out-menu');
+
         setTimeout(() => {
-            buttons.forEach(button => button.classList.remove('fade-out'));
+            donateMenu.classList.remove('active', 'fade-out-menu');
+            buttons.forEach(button => button.classList.remove('hidden'));
             buttons.forEach(button => button.classList.add('fade-in'));
         }, 500);
+
         setTimeout(() => {
             buttons.forEach(button => button.classList.remove('fade-in'));
         }, 1000);
