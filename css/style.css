@@ -160,11 +160,23 @@ footer a {
 }
 
 .donate-menu {
-    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .donate-menu.active {
-    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.fade-out-menu {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .astro-5NTVGBE6 {
@@ -180,14 +192,4 @@ footer a {
 .astro-5NTVGBE6:hover {
     cursor: pointer;
     background-color: #f0f0f0;
-}
-
-.fade-out-menu {
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
-}
-
-.fade-in-menu {
-    opacity: 1;
-    transition: opacity 0.5s ease-in;
 }
