@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const donateMenu = document.getElementById('donate-menu');
 
     donateButton.addEventListener('click', function() {
-        buttons.forEach(button => button.classList.add('fade-out'));
+        buttons.forEach(button => {
+            button.classList.add('fade-out');
+        });
         setTimeout(() => {
             buttons.forEach(button => button.classList.add('hidden'));
             donateMenu.classList.add('active', 'fade-in-menu');
@@ -23,15 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
     backButton.addEventListener('click', function() {
         donateMenu.classList.remove('fade-in-menu');
         donateMenu.classList.add('fade-out-menu');
-
+        
         setTimeout(() => {
             donateMenu.classList.remove('active', 'fade-out-menu');
-            buttons.forEach(button => button.classList.remove('hidden'));
-            buttons.forEach(button => button.classList.add('fade-in'));
+            buttons.forEach(button => {
+                button.classList.remove('hidden', 'fade-out');
+                button.classList.add('fade-in');
+            });
         }, 500);
-
-        setTimeout(() => {
-            buttons.forEach(button => button.classList.remove('fade-in'));
-        }, 1000);
     });
 });
