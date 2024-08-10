@@ -18,16 +18,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         setTimeout(() => {
             buttons.forEach(button => button.classList.add('hidden'));
-            donateMenu.classList.add('active', 'fade-in-menu');
+            donateMenu.classList.add('active');
         }, 500);
     });
 
     backButton.addEventListener('click', function() {
-        donateMenu.classList.remove('fade-in-menu');
+        donateMenu.classList.remove('active');
         donateMenu.classList.add('fade-out-menu');
         
         setTimeout(() => {
-            donateMenu.classList.remove('active', 'fade-out-menu');
+            donateMenu.classList.remove('fade-out-menu');
             buttons.forEach(button => {
                 button.classList.remove('hidden', 'fade-out');
                 button.classList.add('fade-in');
